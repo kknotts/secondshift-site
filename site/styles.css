@@ -73,11 +73,14 @@ section.entry:last-of-type { border-bottom: 0; }
 }
 
 /* Job tickets: boxed, hard-edged, differentiated by rule weight */
-.cardgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 18px; }
+.cardgrid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 640px) { .cardgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .cardgrid { grid-template-columns: repeat(3, 1fr); } }
 .jobcard { background: var(--sheet); border: 1px solid var(--rule); border-top: 3px solid var(--ink);
-  padding: 18px 20px; box-shadow: 2px 3px 0 var(--rule); border-radius: 2px; }
-.jobcard h3 { font-size: 17px; margin-bottom: 6px; }
-.jobcard p { margin: 0; font-size: 15px; color: var(--faint); }
+  padding: 20px 22px 22px; box-shadow: 2px 3px 0 var(--rule); border-radius: 2px;
+  display: flex; flex-direction: column; }
+.jobcard h3 { font-size: 17px; margin: 0 0 10px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+.jobcard p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--faint); }
 
 /* Ledger rows (kept for list-like content) */
 .rows { border-top: 2px solid var(--ink); }
