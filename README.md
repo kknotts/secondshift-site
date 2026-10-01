@@ -1,4 +1,4 @@
-# toolbelt-site
+# secondshift-site
 
 Static marketing site. Everything under /site deploys to GitHub Pages on
 merge to main. Landing page, start-here, demo, and /blog articles.
