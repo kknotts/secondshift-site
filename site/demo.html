@@ -8,64 +8,36 @@
 <!-- GoatCounter: uncomment and set your code after creating the account
 <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 -->
-<style>
-:root {
-  box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-  --bg: #F6F4EE; --card: #FFFFFF; --ink: #23201B; --muted: #5D574E;
-  --line: #E3DED4; --accent: #B04A22; --accent-ink: #FFFFFF; --chip: #EFEBE2;
-}
-html { scroll-padding-top: env(safe-area-inset-top, 0px); }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #191713; --card: #23201B; --ink: #F1EEE7; --muted: #A8A198;
-    --line: #38342E; --accent: #D9713F; --accent-ink: #1B120C; --chip: #2B2722;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #191713; --card: #23201B; --ink: #F1EEE7; --muted: #A8A198;
-  --line: #38342E; --accent: #D9713F; --accent-ink: #1B120C; --chip: #2B2722;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.55; }
-.wrap { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
-h1 { font-size: 32px; line-height: 1.15; margin: 0 0 10px; }
-.sub { color: var(--muted); font-size: 17px; margin: 0 0 8px; }
-.notice { font-size: 14px; color: var(--muted); margin: 0 0 36px; }
-.sample { margin-bottom: 40px; }
-.sample h2 { font-size: 21px; margin: 0 0 4px; }
-.meta { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
-.tier { display: inline-block; background: var(--chip); border: 1px solid var(--line);
-  border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600;
-  margin-left: 8px; vertical-align: 2px; }
-.tier.paid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-.out { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
-  padding: 20px 22px; font-size: 15px; white-space: pre-wrap;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; overflow-x: auto; }
-.out.email { font-family: inherit; }
-.cta { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-  padding: 24px; display: flex; flex-direction: column; gap: 12px; }
-.btn { display: inline-block; background: var(--accent); color: var(--accent-ink);
-  padding: 13px 22px; border-radius: 8px; font-weight: 700; font-size: 16px;
-  text-decoration: none; align-self: flex-start; }
-.btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
-a { color: var(--accent); }
-hr.sep { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
-  <h1>What the output looks like</h1>
-  <p class="sub">Read it before you install anything. If this does not sound like an office you would trust, do not buy it.</p>
-  <p class="notice">All samples below are for Gulf Breeze Air &amp; Heat, a fictional HVAC company, with made-up customers and numbers. They follow the exact rules the skills ship with.</p>
-
-  <div class="sample">
-    <h2>Monday morning call triage<span class="tier">Free starter</span></h2>
-    <p class="meta">Owner pasted six weekend voicemails and asked for a callback order.</p>
-    <div class="out">Number 1 is a possible CO alarm. Call it before reading the rest.
+<header class="site">
+  <div class="col">
+    <a class="wordmark" href="index.html">Second<span> Shift</span></a>
+    <nav class="site">
+      <a href="index.html#work">What it does</a>
+      <a href="demo.html" aria-current="page">Sample output</a>
+      <a href="start-here.html">Setup guide</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a class="btn" href="index.html#pricing">Get the kit</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="entry">
+  <div class="col">
+    <h1>What the output looks like</h1>
+    <p class="lede">Read it before you install anything. If this does not sound like an office you would trust, do not buy it.</p>
+    <p class="small">All samples below are for Gulf Breeze Air and Heat, a fictional HVAC company, with made-up customers and numbers. They follow the exact rules the skills ship with.</p>
+  </div>
+</section>
+<section class="entry">
+  <div class="col">
+    <h2>Monday morning call triage<span class="tag">Free starter</span></h2>
+    <p class="small">Owner pasted six weekend voicemails and asked for a callback order.</p>
+    <div class="printout mono">Number 1 is a possible CO alarm. Call it before reading the rest.
 
 1. Diane Kowalski, 813-555-0142. CO detector going off. Life safety,
    nothing else comes close.
@@ -80,11 +52,12 @@ hr.sep { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 
 Skipped: one robocall about fleet fuel cards.</div>
   </div>
-
-  <div class="sample">
-    <h2>The Friday report<span class="tier">Free starter</span></h2>
-    <p class="meta">Arrives by email every Friday. Numbers come from QuickBooks and the calendar; anything that cannot be verified says so.</p>
-    <div class="out email">Solid week. $11,850 collected, but two invoices just crossed 30 days.
+</section>
+<section class="entry">
+  <div class="col">
+    <h2>The Friday report<span class="tag">Free starter</span></h2>
+    <p class="small">Arrives by email every Friday. Numbers come from QuickBooks and the calendar; anything that cannot be verified says so.</p>
+    <div class="printout">Solid week. $11,850 collected, but two invoices just crossed 30 days.
 
 CASH. $23,400 in the bank. Collected this week: $11,850. Expected next
 week: $8,200 from two invoices coming due. Bills due in the next two
@@ -105,11 +78,12 @@ before the weekend.
 ONE SUGGESTION. Thursday afternoon is open. A maintenance reminder to
 last spring's tune-up customers would likely fill it.</div>
   </div>
-
-  <div class="sample">
-    <h2>The invoice ladder<span class="tier paid">Paid kit</span></h2>
-    <p class="meta">Three reminders for one overdue invoice. Each waits in the approval queue; the owner reads and approves before anything sends.</p>
-    <div class="out email"><strong>Day 3</strong>
+</section>
+<section class="entry">
+  <div class="col">
+    <h2>The invoice ladder<span class="tag paid">Paid kit</span></h2>
+    <p class="small">Three reminders for one overdue invoice. Each waits in the approval queue; the owner reads and approves before anything sends.</p>
+    <div class="printout"><strong>Day 3</strong>
 
 Subject: Invoice 2041
 
@@ -140,11 +114,12 @@ line is open until 5.
 
 Gulf Breeze Air and Heat</div>
   </div>
-
-  <div class="sample">
-    <h2>A lead reply<span class="tier paid">Paid kit</span></h2>
-    <p class="meta">Drafted from the grinding-noise voicemail above. Waits for approval like everything else.</p>
-    <div class="out email">Hi Marcy, got your message about the grinding noise on the AC. Good
+</section>
+<section class="entry">
+  <div class="col">
+    <h2>A lead reply<span class="tag paid">Paid kit</span></h2>
+    <p class="small">Drafted from the grinding-noise voicemail above. Waits for approval like everything else.</p>
+    <div class="printout">Hi Marcy, got your message about the grinding noise on the AC. Good
 call reaching out while it's still running; that's usually cheaper to
 fix than after it quits. We can have a tech out Wednesday between 9 and
 11 or Thursday between 1 and 3. Reply here or call 813-555-0100 and
@@ -152,11 +127,12 @@ we'll lock one in.
 
 Gulf Breeze Air and Heat</div>
   </div>
-
-  <div class="sample">
-    <h2>An estimate, from 90 seconds of job notes<span class="tier paid">Paid kit</span></h2>
-    <p class="meta">Excerpt. Prices come only from the company's own rate card; if an item is missing from the card, the kit stops and asks instead of guessing.</p>
-    <div class="out email"><strong>Scope of work.</strong> Replace the failed 3-ton outdoor condenser at the
+</section>
+<section class="entry">
+  <div class="col">
+    <h2>An estimate, from 90 seconds of job notes<span class="tag paid">Paid kit</span></h2>
+    <p class="small">Excerpt. Prices come only from the company's own rate card; if an item is missing from the card, the kit stops and asks instead of guessing.</p>
+    <div class="printout"><strong>Scope of work.</strong> Replace the failed 3-ton outdoor condenser at the
 rear of the home. We will remove and dispose of the existing unit,
 set and connect the new condenser, flush the line set, install a new
 filter drier, replace the electrical disconnect and whip, then start
@@ -173,13 +149,22 @@ begins, and code upgrades required on inspection. Prices valid 30 days.
 
 Gulf Breeze Air and Heat, FL License CAC0000000</div>
   </div>
-
-  <div class="cta">
-    <strong style="font-size: 19px;">Sound like an office you'd run?</strong>
-    <span>The triage and the Friday report are free. The rest is $99 while founding pricing lasts, with a 30 day unconditional refund.</span>
-    <a class="btn" href="#">Install the free starter [STARTER INSTALL LINK]</a>
-    <a class="btn ghost" href="#">Get the full kit [KIT LINK]</a>
+</section>
+<section class="entry">
+  <div class="col">
+    <h2>Sound like an office you'd run?</h2>
+    <p class="lede">The triage and the Friday report are free. The rest is $99 while founding pricing lasts, with a 30 day unconditional refund.</p>
+    <p style="margin-top:20px"><a class="btn" href="#">[FREE SKILL LINK]</a> &nbsp; <a class="btn quiet" href="index.html#pricing">Get the full kit</a></p>
   </div>
-</div>
+</section>
+</main>
+<footer class="site">
+  <div class="col">
+    <p><a class="wordmark" href="index.html" style="font-size:16px">Second<span> Shift</span></a></p>
+    <p><a href="index.html">Home</a> &nbsp; <a href="demo.html">Sample output</a> &nbsp; <a href="start-here.html">Setup guide</a></p>
+    <p>Questions: [EMAIL]. Straight answer within a day.</p>
+    <p>Every kit: 30 day refund, no questions asked.</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -11,182 +11,108 @@
 <!-- GoatCounter: uncomment and set your code after creating the account
 <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 -->
-<style>
-:root {
-  box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-  --bg: #F6F4EE; --card: #FFFFFF; --ink: #23201B; --muted: #5D574E;
-  --line: #E3DED4; --accent: #B04A22; --accent-ink: #FFFFFF;
-  --deep: #2C4F5E; --deep-ink: #D9E2E7; --dark: #23201B; --dark-ink: #CFCAC0;
-}
-html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #191713; --card: #221F1A; --ink: #F1EEE7; --muted: #A8A198;
-    --line: #38342E; --accent: #D9713F; --accent-ink: #1B120C;
-    --deep: #1E3741; --dark: #12100D;
-  }
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.55;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-.wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
-header { border-bottom: 1px solid var(--line); }
-.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; flex-wrap: wrap; }
-.mark { font-weight: 800; letter-spacing: 1px; font-size: 19px; }
-.nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; }
-.nav .links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-.btn { display: inline-block; background: var(--accent); color: var(--accent-ink);
-  padding: 12px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 16px; }
-.btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
-.hero { padding: 64px 0 56px; }
-.eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 2px; font-size: 13px; text-transform: uppercase; }
-h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.03; margin: 10px 0 18px; max-width: 760px; }
-.lede { font-size: 19px; max-width: 640px; color: var(--muted); margin: 0 0 24px; }
-.hero .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.fine { font-size: 14px; color: var(--muted); margin-top: 14px; }
-.stats { background: var(--deep); color: #FFFFFF; padding: 40px 0; }
-.stats .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
-.stats b { display: block; font-size: 42px; line-height: 1; }
-.stats span { color: var(--deep-ink); font-size: 15px; }
-.stats .src { color: #A9BAC3; font-size: 12px; margin-top: 18px; }
-section.block { padding: 64px 0 56px; }
-h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.1; margin: 8px 0 28px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 22px; }
-.card h3 { margin: 0 0 8px; font-size: 19px; }
-.card p { margin: 0; font-size: 15px; color: var(--muted); }
-.card.inverse { background: var(--dark); border-color: var(--dark); }
-.card.inverse h3 { color: #FFFFFF; }
-.card.inverse p { color: var(--dark-ink); }
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 26px; }
-.steps b { color: var(--accent); font-size: 34px; display: block; }
-.steps h3 { margin: 6px 0 8px; font-size: 19px; }
-.steps p { margin: 0; font-size: 15px; color: var(--muted); }
-.chips { display: flex; flex-wrap: wrap; gap: 10px; }
-.chip { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-size: 14px; font-weight: 600; }
-.price { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; max-width: 760px; }
-.pcard { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; }
-.pcard.hot { border: 2px solid var(--accent); }
-.pcard .amount { font-size: 44px; font-weight: 800; }
-.pcard .per { color: var(--muted); font-size: 14px; }
-.pcard p { font-size: 15px; color: var(--muted); }
-.faq { max-width: 740px; }
-.faq h3 { font-size: 17px; margin: 22px 0 6px; }
-.faq p { margin: 0; font-size: 15px; color: var(--muted); }
-.cta { background: var(--dark); color: #FFFFFF; padding: 64px 0; }
-.cta h2 { color: #FFFFFF; max-width: 680px; }
-.cta p { color: var(--dark-ink); max-width: 560px; }
-footer { background: var(--dark); color: #8C867C; border-top: 1px solid #3A362F; padding: 22px 0; font-size: 14px; }
-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-footer a { color: #CFCAC0; }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <div class="mark">SECOND SHIFT</div>
-    <div class="links">
-      <a href="#work">What it does</a>
-      <a href="demo.html">See sample output</a>
-      <a href="#pricing">Pricing</a>
-      <a class="btn" href="#pricing">Get the kit</a>
-    </div>
+<header class="site">
+  <div class="col">
+    <a class="wordmark" href="index.html">Second<span> Shift</span></a>
+    <nav class="site">
+      <a href="index.html#work" aria-current="page">What it does</a>
+      <a href="demo.html">Sample output</a>
+      <a href="start-here.html">Setup guide</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a class="btn" href="index.html#pricing">Get the kit</a>
+    </nav>
   </div>
 </header>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">For HVAC, plumbing, electrical &amp; remodeling companies</div>
+<main>
+<section class="entry">
+  <div class="col">
     <h1>Your office runs itself. You run the jobs.</h1>
     <p class="lede">A setup kit that turns Claude into your office manager, inside the tools you already use: QuickBooks, your phones, your calendar. It answers leads in minutes, writes your estimates, chases your invoices, and sends you your numbers every Friday. You install it yourself in one afternoon, and the kit walks you through every click.</p>
-    <div class="row">
-      <a class="btn" href="#pricing">Get the kit</a>
-      <a class="btn ghost" href="demo.html">Read the output first</a>
-    </div>
-    <div class="fine">No new software to learn. Works with what you already pay for. You approve every message before it sends.</div>
+    <p>For HVAC, plumbing, electrical, and remodeling companies.</p>
+    <p style="margin-top:22px"><a class="btn" href="#pricing">Get the kit</a> &nbsp; <a class="btn quiet" href="demo.html">Read the output first</a></p>
+    <p class="small">No new software to learn. Works with what you already pay for. You approve every message before it sends.</p>
   </div>
 </section>
 
-<section class="stats">
-  <div class="wrap">
-    <div class="grid">
-      <div><b>74%</b><span>of contractors say AI is an efficiency engine for their business</span></div>
-      <div><b>25%</b><span>actually use it today. The rest are doing things the old way</span></div>
-      <div><b>+48%</b><span>productivity reported by early adopters, with 45% saving real time</span></div>
+<section class="entry">
+  <div class="col">
+    <div class="summary">
+      <p><b>74%</b> of contractors call AI an efficiency engine for their business. <b>25%</b> actually use it today. Early adopters report <b>+48%</b> productivity, and 45% say it saves them real time.</p>
     </div>
-    <div class="src">Source: ServiceTitan 2026 Residential State of the Trades Report, survey of 1,000 residential contractors.</div>
+    <p class="small" style="margin-top:10px">ServiceTitan 2026 Residential State of the Trades Report, survey of 1,000 residential contractors.</p>
   </div>
 </section>
 
-<section class="block" id="work">
-  <div class="wrap">
-    <div class="eyebrow">What you get</div>
-    <h2>Five jobs off your plate, one afternoon of setup</h2>
-    <div class="cards">
-      <div class="card"><h3>Every lead answered in minutes</h3><p>Missed call, voicemail, web form, or text: every inquiry gets answered fast, with two times to pick from. Emergencies go straight to your phone.</p></div>
-      <div class="card"><h3>Estimates from your job notes</h3><p>Talk through the job for 90 seconds. Get back a clean, itemized estimate built from your own rate card, plus the email to send with it. Nothing goes out until you approve it.</p></div>
-      <div class="card"><h3>Invoices that chase themselves</h3><p>Three polite reminders that get firmer, pulled straight from QuickBooks. You stop playing bill collector and the money shows up.</p></div>
-      <div class="card"><h3>Google reviews on autopilot</h3><p>The right ask at the right moment, in your voice. Unhappy customers get routed to you privately before they ever reach Google.</p></div>
-      <div class="card"><h3>Your numbers, every Friday</h3><p>Cash in the bank, who owes you what, next week's schedule, and one suggestion. A three-minute email in plain English. No dashboard to log into.</p></div>
-      <div class="card inverse"><h3>Plus a morning brief</h3><p>One minute, first coffee: overnight leads, today's jobs, and what's waiting on your approval. Facts only.</p></div>
+<section class="entry" id="work">
+  <span class="note">What you get</span>
+  <div class="col">
+    <h2>Six jobs off your plate</h2>
+    <div class="rows">
+      <div class="row"><h3>Leads answered in minutes</h3><p>Missed call, voicemail, web form, or text: every inquiry gets answered fast, with two times to pick from. Emergencies go straight to your phone.</p></div>
+      <div class="row"><h3>Estimates from job notes</h3><p>Talk through the job for 90 seconds. Get back a clean, itemized estimate built from your own rate card, plus the email to send with it. Nothing goes out until you approve it.</p></div>
+      <div class="row"><h3>Invoices chased for you</h3><p>Three polite reminders that get firmer, pulled straight from QuickBooks. You stop playing bill collector and the money shows up.</p></div>
+      <div class="row"><h3>Google reviews, asked right</h3><p>The right ask at the right moment, in your voice. Unhappy customers get routed to you privately before they ever reach Google.</p></div>
+      <div class="row"><h3>Your numbers every Friday</h3><p>Cash in the bank, who owes you what, next week's schedule, and one suggestion. A three-minute email in plain English. No dashboard to log into.</p></div>
+      <div class="row"><h3>A one-minute morning brief</h3><p>Overnight leads, today's jobs, and what's waiting on your approval. Facts only; suggestions wait for Friday.</p></div>
     </div>
+    <p style="margin-top:18px"><a href="demo.html">Read real sample output from every workflow</a> before you spend a dollar.</p>
   </div>
 </section>
 
-<section class="block" style="background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-  <div class="wrap">
-    <div class="eyebrow">How it works</div>
-    <h2>Three steps, no IT department required</h2>
+<section class="entry" id="how">
+  <span class="note">How it works</span>
+  <div class="col">
+    <h2>Three steps, no IT department</h2>
     <div class="steps">
-      <div><b>1</b><h3>Buy it, get it now</h3><p>Checkout takes a minute and the kit arrives instantly: one file to upload, with all six workflows inside, plus a start-here page that shows every click.</p></div>
-      <div><b>2</b><h3>Follow the guided setup</h3><p>The kit includes a setup assistant that runs inside Claude and walks you through it: connecting your accounts, loading your rates, and testing everything on your real jobs. Plan on one afternoon.</p></div>
-      <div><b>3</b><h3>You approve, it works</h3><p>Everything starts in approval mode, so nothing sends without your OK. When you're comfortable with what you're seeing, you decide what runs on its own.</p></div>
+      <div class="step"><div><h3>Buy it, get it now</h3><p>Checkout takes a minute and the kit arrives instantly: one file to upload, with all six workflows inside, plus a start-here page that shows every click.</p></div></div>
+      <div class="step"><div><h3>Follow the guided setup</h3><p>The kit includes a setup assistant that runs inside Claude and walks you through it: connecting your accounts, loading your rates, and testing everything on your real jobs. Plan on one afternoon.</p></div></div>
+      <div class="step"><div><h3>You approve, it works</h3><p>Everything starts in approval mode, so nothing sends without your OK. When you're comfortable with what you're seeing, you decide what runs on its own.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="block">
-  <div class="wrap">
-    <div class="eyebrow">Works with what you already run</div>
-    <div class="chips" style="margin-top: 16px;">
-      <span class="chip">QuickBooks</span><span class="chip">Xero</span><span class="chip">Google Workspace</span>
-      <span class="chip">RingCentral</span><span class="chip">Gusto</span><span class="chip">Square</span>
-      <span class="chip">Stripe</span><span class="chip">Jobber via Zapier</span><span class="chip">Housecall Pro via Zapier</span>
-    </div>
-    <p class="fine" style="max-width: 640px;">Built on Claude, the same AI toolkit small businesses have installed more than 900,000 times. Everything connects through each tool's own secure sign-in. We never hold your passwords.</p>
+<section class="entry" id="tools">
+  <span class="note">Works with</span>
+  <div class="col">
+    <h2>The tools you already run</h2>
+    <ul class="plain">
+      <li>QuickBooks</li><li>Xero</li><li>Google Workspace</li><li>RingCentral</li><li>Gusto</li>
+      <li>Square</li><li>Stripe</li><li>Jobber via Zapier</li><li>Housecall Pro via Zapier</li>
+    </ul>
+    <p class="small" style="margin-top:14px; max-width:62ch">Built on Claude, the same AI toolkit small businesses have installed more than 900,000 times. Everything connects through each tool's own secure sign-in. We never hold your passwords.</p>
   </div>
 </section>
 
-<section class="block" id="pricing" style="background: var(--card); border-top: 1px solid var(--line);">
-  <div class="wrap">
-    <div class="eyebrow">Pricing</div>
+<section class="entry" id="pricing">
+  <span class="note">Pricing</span>
+  <div class="col">
     <h2>Less than one recovered job per month</h2>
-    <div class="price">
-      <div class="pcard hot">
-        <h3>The Kit</h3>
-        <div class="amount">$99</div>
-        <div class="per">founding price, $149 after the first 50</div>
-        <p>One skill file with all six workflows and the built-in setup assistant, the start-here guide, and free updates to every v1 workflow.</p>
-        <a class="btn" href="#">[CHECKOUT LINK]</a>
-      </div>
-      <div class="pcard">
-        <h3>Try one skill free</h3>
-        <div class="amount">$0</div>
-        <div class="per">the Friday Report skill</div>
-        <p>See your cash, your overdue invoices, and next week's schedule in a three-minute plain-English email this Friday. Free, and it works before you spend a dollar.</p>
-        <a class="btn ghost" href="#">[FREE SKILL LINK]</a>
-      </div>
+    <div class="ticket priced">
+      <h3>The Trades Office Kit</h3>
+      <div class="amount">$99</div>
+      <div class="terms">Founding price. $149 after the first 50 kits.</div>
+      <p>One skill file with all six workflows and the built-in setup assistant, the start-here guide, and free updates to every v1 workflow.</p>
+      <a class="btn" href="#">[CHECKOUT LINK]</a>
     </div>
-    <p style="margin-top: 22px; font-weight: 700;">Founding pricing for the first 50 kits.</p>
-    <p class="fine" style="max-width: 640px;">Simple guarantee: 30 days, full refund, no questions asked. Keep the free skill either way.</p>
+    <div class="ticket">
+      <h3>Try one skill free</h3>
+      <div class="amount">$0</div>
+      <div class="terms">The Friday Report skill.</div>
+      <p>See your cash, your overdue invoices, and next week's schedule in a three-minute plain-English email this Friday. It works before you spend a dollar.</p>
+      <a class="btn quiet" href="#">[FREE SKILL LINK]</a>
+    </div>
+    <p>Simple guarantee: 30 days, full refund, no questions asked. Keep the free skill either way.</p>
   </div>
 </section>
 
-<section class="block">
-  <div class="wrap faq">
-    <div class="eyebrow">Straight answers</div>
+<section class="entry" id="questions">
+  <span class="note">Straight answers</span>
+  <div class="col qa">
     <h2>The questions every owner asks</h2>
     <h3>Will it send something stupid to my customers?</h3>
     <p>No. Every message starts in an approval queue. You read it, you tap approve, it sends. You choose if and when anything runs on its own, and estimates always require your approval, permanently.</p>
@@ -199,19 +125,20 @@ footer a { color: #CFCAC0; }
   </div>
 </section>
 
-<section class="cta" id="get">
-  <div class="wrap">
+<section class="entry" id="get">
+  <div class="col">
     <h2>End the second shift.</h2>
-    <p>Get your evenings back for less than one service call. $99 while founding pricing lasts. Set up in an afternoon. Full refund inside 30 days if it is not worth it to you.</p>
-    <p style="margin-top: 20px;"><a class="btn" href="#">[CHECKOUT LINK]</a></p>
-    <p class="fine" style="color: #8C867C;">Questions first? Email [EMAIL]. Straight answer within a day.</p>
+    <p class="lede">Get your evenings back for less than one service call. $99 while founding pricing lasts. Set up in an afternoon. Full refund inside 30 days if it is not worth it to you.</p>
+    <p style="margin-top:20px"><a class="btn" href="#">[CHECKOUT LINK]</a></p>
   </div>
 </section>
-
-<footer>
-  <div class="wrap">
-    <div>SECOND SHIFT</div>
-    <div><a href="start-here.html">Start here</a> &middot; <a href="demo.html">Sample output</a> &middot; [EMAIL] &middot; 30 day refunds, no questions asked</div>
+</main>
+<footer class="site">
+  <div class="col">
+    <p><a class="wordmark" href="index.html" style="font-size:16px">Second<span> Shift</span></a></p>
+    <p><a href="index.html">Home</a> &nbsp; <a href="demo.html">Sample output</a> &nbsp; <a href="start-here.html">Setup guide</a></p>
+    <p>Questions: [EMAIL]. Straight answer within a day.</p>
+    <p>Every kit: 30 day refund, no questions asked.</p>
   </div>
 </footer>
 </body>
